@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>地域包括支援センターくるみ（さいたま市西区南部圏域）｜医療法人 博滇会グループ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --indigo: #1E4068;
+    --indigo-dark: #13294A;
+    --crimson: #A93A2E;
+    --crimson-dark: #832C23;
+    --ine: #F2EEE3;
+    --ine-deep: #E8E0CC;
+    --sage: #9DB899;
+    --sage-dark: #7A957A;
+    --sage-deeper: #4F6B4D;
+    --sage-light: #D8E2D5;
+    --text: #222222;
+    --text-sub: #555555;
+    --bg: #FBF9F4;
+    --white: #FFFFFF;
+    --border: #E5E0D2;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Klee One", "Yu Mincho", serif;
+    color: var(--text);
+    line-height: 1.85;
+    background: var(--bg);
+    font-size: 16px;
+  }
+  h1, h2, h3, h4 {
+    font-family: "Zen Maru Gothic", "Yu Gothic", sans-serif;
+    font-weight: 700;
+    line-height: 1.5;
+  }
+  a { color: var(--indigo); text-decoration: none; }
+  img { max-width: 100%; display: block; }
+
+  /* ヘッダー */
+  .site-header {
+    background: var(--white);
+    border-bottom: 3px solid var(--sage);
+    position: sticky; top: 0; z-index: 100;
+    box-shadow: 0 1px 4px rgba(30,64,104,0.06);
+  }
+  .header-inner {
+    max-width: 1180px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 24px; gap: 20px;
+  }
+  .logo { display: flex; align-items: center; gap: 14px; }
+  .logo-mark-img { height: 42px; width: auto; display: block; }
+  .logo-divider { width: 1px; height: 36px; background: var(--ine-deep); }
+  .logo-text { line-height: 1.3; }
+  .logo-text .ja { font-family: "Zen Maru Gothic", serif; font-weight: 700; color: var(--indigo); font-size: 17px; }
+  .logo-text .sub { font-size: 11px; color: var(--text-sub); letter-spacing: 0.05em; }
+  footer .logo-mark-img { height: 54px; }
+
+  .gnav { display: flex; gap: 22px; }
+  .gnav a {
+    color: var(--text); font-size: 14px; font-weight: 500;
+    padding: 6px 0; border-bottom: 2px solid transparent;
+    transition: 0.2s;
+  }
+  .gnav a:hover { color: var(--sage-dark); border-color: var(--sage); }
+
+  .header-cta { display: flex; gap: 10px; align-items: center; }
+  .btn-tel-header {
+    background: var(--crimson); color: #fff;
+    padding: 10px 18px; border-radius: 6px;
+    font-weight: 700; font-size: 14px;
+    display: flex; align-items: center; gap: 8px;
+    border: 0; cursor: pointer; font-family: inherit;
+  }
+  .btn-tel-header:hover { background: var(--crimson-dark); color: #fff; }
+  .btn-recruit-header {
+    background: var(--white); color: var(--indigo);
+    border: 1.5px solid var(--indigo);
+    padding: 8px 14px; border-radius: 6px;
+    font-size: 13px; font-weight: 700;
+  }
+  .btn-recruit-header:hover { background: var(--indigo); color: #fff; }
+
+  /* ファーストビュー（全画面写真、キャッチコピーのみ） */
+  .hero {
+    position: relative;
+    min-height: 70vh;
+    color: #fff;
+    overflow: hidden;
+    background-color: #4F6B4D;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    animation: heroFade 18s infinite;
+  }
+  .hero-bg:nth-child(1) { background-image: url('hero_clinic.jpg'); animation-delay: 0s; }
+  .hero-bg:nth-child(2) { background-image: url('hero_clinic2.jpg'); animation-delay: 9s; }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(30,64,104,0.25) 0%, rgba(79,107,77,0.25) 50%, rgba(30,64,104,0.50) 100%);
+    z-index: 1;
+  }
+  @keyframes heroFade {
+    0%, 42% { opacity: 1; transform: scale(1); }
+    50%, 92% { opacity: 0; transform: scale(1.05); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+  .hero-content {
+    position: relative; z-index: 2;
+    max-width: 1080px; margin: 0 auto;
+    padding: 24vh 24px 20vh;
+    text-align: center;
+  }
+  .hero-catch {
+    font-family: "Zen Maru Gothic", "Yu Gothic", sans-serif;
+    font-size: clamp(34px, 6vw, 64px);
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+    line-height: 1.5;
+    text-shadow: 0 6px 28px rgba(0,0,0,0.55), 0 3px 8px rgba(0,0,0,0.45);
+    letter-spacing: 0.04em;
+  }
+  .hero-catch .accent { color: #FFE8C7; display: inline-block; }
+  .hero-sub {
+    margin: 22px 0 0; font-size: clamp(14px, 2.2vw, 18px);
+    font-family: "Zen Maru Gothic", sans-serif; font-weight: 500;
+    text-shadow: 0 3px 14px rgba(0,0,0,0.5);
+    letter-spacing: 0.06em;
+  }
+
+  /* ロゴ浮遊演出 */
+  .logo-flutter {
+    position: absolute; inset: 0;
+    overflow: hidden; pointer-events: none;
+    z-index: 1;
+  }
+  .logo-flutter img {
+    position: absolute;
+    opacity: 0.18;
+    filter: brightness(1.2);
+    will-change: transform;
+  }
+  .logo-flutter img:nth-child(1) { top: 8%;  left: 6%;  width: 60px; animation: flutter1 14s ease-in-out infinite; }
+  .logo-flutter img:nth-child(2) { top: 18%; left: 82%; width: 80px; animation: flutter2 18s ease-in-out infinite 1s; opacity: 0.14; }
+  .logo-flutter img:nth-child(3) { top: 62%; left: 12%; width: 50px; animation: flutter3 16s ease-in-out infinite 2s; opacity: 0.20; }
+  .logo-flutter img:nth-child(4) { top: 72%; left: 78%; width: 70px; animation: flutter1 20s ease-in-out infinite 0.5s; opacity: 0.13; }
+  .logo-flutter img:nth-child(5) { top: 38%; left: 48%; width: 44px; animation: flutter2 15s ease-in-out infinite 3s; opacity: 0.10; }
+  .logo-flutter img:nth-child(6) { top: 85%; left: 40%; width: 56px; animation: flutter3 17s ease-in-out infinite 1.5s; opacity: 0.16; }
+  .logo-flutter img:nth-child(7) { top: 5%;  left: 56%; width: 38px; animation: flutter1 13s ease-in-out infinite 2.5s; opacity: 0.12; }
+  @keyframes flutter1 {
+    0%, 100% { transform: translate(0,0) rotate(0deg); }
+    25%      { transform: translate(20px,-20px) rotate(10deg); }
+    50%      { transform: translate(-10px,15px) rotate(-6deg); }
+    75%      { transform: translate(15px,8px) rotate(4deg); }
+  }
+  @keyframes flutter2 {
+    0%, 100% { transform: translate(0,0) rotate(0deg); }
+    30%      { transform: translate(-25px,18px) rotate(-12deg); }
+    60%      { transform: translate(20px,-10px) rotate(8deg); }
+  }
+  @keyframes flutter3 {
+    0%, 100% { transform: translate(0,0) rotate(-3deg); }
+    33%      { transform: translate(15px,20px) rotate(7deg); }
+    66%      { transform: translate(-15px,-10px) rotate(-8deg); }
+  }
+  @media (max-width: 760px) {
+    .logo-flutter img:nth-child(n+5) { display: none; }
+    .logo-flutter img { width: 32px !important; }
+  }
+
+  /* 明るい背景用：ロゴ浮遊を薄く */
+  .logo-flutter-light img {
+    opacity: 0.10 !important;
+    filter: none !important;
+  }
+  /* 浮遊背景用ラッパー */
+  .flutter-wrap { position: relative; overflow: hidden; }
+
+  /* ヒーロー直下の紹介・CTA */
+  .intro-message {
+    background: var(--bg);
+    padding: 70px 24px 50px;
+    text-align: center;
+  }
+  .intro-message .container { max-width: 880px; margin: 0 auto; }
+  .intro-message .intro-cta {
+    display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;
+    margin-bottom: 36px;
+  }
+  .intro-message p {
+    font-size: 17px; line-height: 2.1;
+    color: var(--text);
+    margin: 0;
+  }
+  .intro-message p .highlight {
+    color: var(--indigo); font-weight: 700;
+    border-bottom: 2px solid var(--sage-light);
+    padding: 0 2px;
+  }
+
+  /* 情報バー */
+  .info-bar-wrap { max-width: 1080px; margin: 0 auto 80px; padding: 0 24px; }
+  .info-bar {
+    background: var(--white);
+    border-radius: 14px;
+    padding: 28px 32px;
+    box-shadow: 0 4px 18px rgba(30,64,104,0.08);
+    border: 1px solid var(--ine-deep);
+  }
+  .info-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
+    align-items: center;
+  }
+  .info-grid > div {
+    text-align: center;
+    padding: 0 12px;
+    border-right: 1px solid var(--ine-deep);
+  }
+  .info-grid > div:last-child { border-right: 0; }
+  .info-grid .label {
+    font-size: 12px; color: var(--sage-dark); font-weight: 700;
+    letter-spacing: 0.1em; margin-bottom: 8px;
+  }
+  .info-grid .value {
+    font-family: "Zen Maru Gothic", serif;
+    font-size: 17px; color: var(--indigo); font-weight: 700;
+    line-height: 1.5;
+  }
+  .info-grid .value small {
+    font-family: "Klee One", serif;
+    font-size: 12px; color: var(--text-sub); display: block;
+    font-weight: 400; margin-top: 4px;
+  }
+
+  /* ボタン共通（intro-cta用） */
+  .btn-primary {
+    background: var(--crimson); color: #fff;
+    padding: 18px 34px; border-radius: 50px;
+    font-weight: 700; font-size: 16px;
+    font-family: inherit;
+    display: inline-flex; align-items: center; gap: 10px;
+    box-shadow: 0 6px 18px rgba(169,58,46,0.30);
+    transition: 0.2s;
+    border: 0; cursor: pointer;
+  }
+  .btn-primary:hover { background: var(--crimson-dark); color: #fff; transform: translateY(-2px); }
+  .btn-secondary {
+    background: var(--white);
+    color: var(--indigo);
+    border: 1.5px solid var(--indigo);
+    padding: 18px 34px; border-radius: 50px;
+    font-weight: 700; font-size: 16px;
+    display: inline-flex; align-items: center; gap: 10px;
+    transition: 0.2s;
+  }
+  .btn-secondary:hover { background: var(--indigo); color: #fff; }
+
+  /* セクション共通 */
+  section { padding: 80px 24px; }
+  .section-inner { max-width: 1080px; margin: 0 auto; }
+  .section-head { text-align: center; margin-bottom: 50px; }
+  .section-head h2 { font-size: 30px; color: var(--indigo); margin: 0 0 12px; }
+  .section-head p { color: var(--text-sub); margin: 0; }
+
+  /* 地域包括支援センターとは */
+  .intro { background: var(--white); }
+  .intro-card {
+    background: var(--ine);
+    border-radius: 16px;
+    padding: 50px 40px;
+    text-align: center;
+    border: 2px solid var(--ine-deep);
+  }
+  .intro-card .leader {
+    font-family: "Zen Maru Gothic", serif;
+    font-size: 24px; color: var(--indigo);
+    margin: 0 0 24px; line-height: 1.6; font-weight: 700;
+  }
+  .intro-card .leader em { font-style: normal; color: var(--sage-dark); }
+  .intro-card p { max-width: 720px; margin: 0 auto; color: var(--text); }
+  .intro-list {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px;
+    max-width: 720px; margin: 30px auto 0; text-align: left;
+  }
+  .intro-list li {
+    background: var(--white); padding: 12px 18px; border-radius: 8px;
+    border-left: 4px solid var(--sage);
+    list-style: none; font-size: 14px;
+  }
+
+  /* サービス内容（4つの業務） */
+  .services { background: var(--bg); }
+  .service-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .service-card {
+    background: var(--white);
+    border-radius: 14px; padding: 32px 28px;
+    border-top: 5px solid var(--sage);
+    box-shadow: 0 2px 8px rgba(30,64,104,0.05);
+    transition: 0.2s;
+  }
+  .service-card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(30,64,104,0.1); }
+  .service-card .num {
+    color: var(--sage); font-family: "Zen Maru Gothic", serif;
+    font-size: 14px; font-weight: 700; letter-spacing: 0.15em;
+    margin-bottom: 8px;
+  }
+  .service-card h3 { font-size: 20px; color: var(--indigo); margin: 0 0 12px; }
+  .service-card p { margin: 0; font-size: 15px; color: var(--text-sub); }
+
+  /* 支え合いの地域づくり */
+  .community { background: var(--white); }
+  .community-card {
+    background: var(--sage-light);
+    border-radius: 16px;
+    padding: 50px 40px;
+    display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center;
+  }
+  .community-card .text h3 { font-size: 24px; color: var(--indigo); margin: 0 0 16px; }
+  .community-card .text h3 .badge {
+    display: inline-block;
+    background: var(--sage-deeper); color: #fff;
+    font-size: 12px; padding: 4px 10px; border-radius: 4px;
+    margin-bottom: 12px; letter-spacing: 0.05em;
+    font-family: "Zen Maru Gothic", sans-serif; font-weight: 700;
+  }
+  .community-card .text p { margin: 0 0 12px; font-size: 15px; line-height: 1.9; color: var(--text); }
+  .community-card .activities {
+    background: var(--white); border-radius: 12px;
+    padding: 28px 28px;
+    box-shadow: 0 2px 8px rgba(30,64,104,0.08);
+  }
+  .community-card .activities h4 {
+    color: var(--indigo); font-size: 16px; margin: 0 0 16px;
+    padding-bottom: 10px; border-bottom: 2px dotted var(--sage);
+  }
+  .community-card .activities ul {
+    list-style: none; padding: 0; margin: 0;
+    display: flex; flex-direction: column; gap: 12px;
+  }
+  .community-card .activities li {
+    display: grid; grid-template-columns: 32px 1fr; gap: 10px;
+    font-size: 14px; line-height: 1.6;
+  }
+  .community-card .activities .ico {
+    background: var(--sage); color: #fff;
+    width: 28px; height: 28px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
+  }
+  .community-card .activities .ttl { font-weight: 700; color: var(--indigo); display: block; font-family: "Zen Maru Gothic", serif; }
+  .community-card .activities .desc { font-size: 12px; color: var(--text-sub); }
+
+  /* 新着情報 */
+  .news { background: var(--ine); }
+  .news-list {
+    max-width: 820px; margin: 0 auto;
+    background: var(--white); border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(30,64,104,0.05);
+    overflow: hidden;
+  }
+  .news-item {
+    display: grid; grid-template-columns: 110px 90px 1fr; gap: 20px;
+    padding: 18px 28px; align-items: center;
+    border-bottom: 1px dotted var(--ine-deep);
+    transition: 0.15s;
+  }
+  .news-item:last-child { border-bottom: 0; }
+  .news-item:hover { background: var(--ine); }
+  .news-item .date { color: var(--text-sub); font-size: 13px; font-weight: 500; }
+  .news-item .cat {
+    display: inline-block;
+    padding: 4px 10px; border-radius: 4px;
+    font-size: 11px; font-weight: 700; text-align: center;
+    font-family: "Zen Maru Gothic", serif;
+  }
+  .news-item .cat.cafe { background: #FFEDD5; color: #C66B23; }
+  .news-item .cat.salon { background: var(--sage-light); color: var(--sage-deeper); }
+  .news-item .cat.event { background: #DCE6F2; color: var(--indigo); }
+  .news-item .ttl { font-size: 15px; font-weight: 500; color: var(--text); }
+
+  /* ご利用対象（こんな方へ） */
+  .target { background: var(--bg); }
+  .target-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .target-card {
+    background: var(--white); border-radius: 12px;
+    padding: 28px 24px;
+    border-left: 5px solid var(--sage);
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(30,64,104,0.05);
+  }
+  .target-card .ico { font-size: 40px; margin-bottom: 8px; }
+  .target-card h3 { font-size: 17px; color: var(--indigo); margin: 0 0 8px; }
+  .target-card p { font-size: 14px; color: var(--text-sub); margin: 0; }
+
+  /* ご利用の流れ */
+  .flow { background: var(--ine); }
+  .flow-list { display: flex; flex-direction: column; gap: 16px; }
+  .flow-step {
+    background: var(--white);
+    border-radius: 12px; padding: 24px 28px;
+    display: grid; grid-template-columns: 90px 220px 1fr; gap: 24px; align-items: center;
+    position: relative;
+  }
+  .flow-step .step-num {
+    background: var(--indigo); color: #fff;
+    width: 76px; height: 76px; border-radius: 50%;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    font-family: "Zen Maru Gothic", serif;
+  }
+  .flow-step .step-num .label-step { font-size: 11px; letter-spacing: 0.15em; }
+  .flow-step .step-num .num { font-size: 26px; font-weight: 900; line-height: 1; }
+  .flow-step h3 { font-size: 18px; color: var(--indigo); margin: 0; }
+  .flow-step p { margin: 0; font-size: 14px; color: var(--text-sub); }
+  .flow-step:not(:last-child)::after {
+    content: ""; position: absolute;
+    left: 64px; bottom: -16px;
+    width: 0; height: 0;
+    border: 8px solid transparent; border-top-color: var(--sage);
+    z-index: 1;
+  }
+
+  /* 対応エリア */
+  .area { background: var(--white); }
+  .area-grid { display: flex; flex-direction: column; gap: 30px; align-items: center; }
+  .area-map {
+    background: var(--white);
+    border-radius: 14px;
+    padding: 20px;
+    border: 1px solid var(--ine-deep);
+    width: 100%; max-width: 880px;
+    box-shadow: 0 2px 10px rgba(30,64,104,0.05);
+  }
+  .area-map img { width: 100%; height: auto; display: block; border-radius: 8px; }
+  .area-list-note { width: 100%; max-width: 880px; }
+  .area-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; justify-content: center; }
+  .area-tag {
+    background: var(--ine); border: 1px solid var(--ine-deep);
+    color: var(--indigo); padding: 8px 16px; border-radius: 20px;
+    font-size: 14px; font-weight: 500;
+  }
+  .area-tag.featured { background: var(--sage); border-color: var(--sage-dark); color: #fff; }
+
+  /* 施設情報 */
+  .offices { background: var(--ine); }
+  .office-single {
+    background: var(--white);
+    border-radius: 14px; overflow: hidden;
+    box-shadow: 0 2px 10px rgba(30,64,104,0.07);
+    max-width: 880px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr;
+  }
+  .office-single .head {
+    background: var(--indigo); color: #fff;
+    padding: 28px 32px;
+    grid-column: 1 / -1;
+  }
+  .office-single .head .area-label { font-size: 12px; letter-spacing: 0.1em; opacity: 0.9; display: block; margin-bottom: 6px; }
+  .office-single .head h3 { font-size: 22px; margin: 0; line-height: 1.4; color: #fff; }
+  .office-single .body { padding: 28px 32px; display: flex; flex-direction: column; gap: 14px; }
+  .office-single .info-row {
+    display: grid; grid-template-columns: 90px 1fr; gap: 8px;
+    font-size: 15px; line-height: 1.7;
+  }
+  .office-single .info-row .lbl { color: var(--indigo); font-weight: 700; font-size: 13px; padding-top: 2px; }
+  .office-single .tel-btn {
+    margin-top: 10px;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    background: var(--ine); color: var(--crimson);
+    padding: 16px; border-radius: 8px;
+    font-weight: 700; font-size: 20px;
+    border: 2px solid var(--crimson);
+    transition: 0.2s;
+    font-family: "Zen Maru Gothic", serif;
+  }
+  .office-single .tel-btn:hover { background: var(--crimson); color: #fff; }
+  .office-single .map-wrap {
+    padding: 28px 32px 32px;
+    border-left: 1px solid var(--border);
+  }
+  .office-single .map-wrap iframe {
+    width: 100%; height: 280px; border: 0;
+    border-radius: 8px; background: var(--sage-light);
+    display: block;
+  }
+  .office-single .office-map-link {
+    display: inline-flex; align-items: center; gap: 4px;
+    font-size: 13px; color: var(--sage-dark);
+    margin-top: 10px;
+  }
+  .office-single .office-map-link:hover { color: var(--crimson); }
+
+  /* FAQ */
+  .faq { background: var(--white); }
+  .faq-list { max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; }
+  .faq-item {
+    background: var(--bg);
+    border-radius: 12px;
+    padding: 22px 26px;
+    border-left: 5px solid var(--sage);
+  }
+  .faq-q {
+    display: flex; gap: 14px; align-items: flex-start;
+    font-weight: 700; color: var(--indigo); font-size: 16px;
+    margin-bottom: 8px;
+  }
+  .faq-q .mark {
+    background: var(--sage); color: #fff;
+    width: 28px; height: 28px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: "Zen Maru Gothic", serif; font-weight: 900; font-size: 14px;
+    flex-shrink: 0;
+  }
+  .faq-a {
+    display: flex; gap: 14px; align-items: flex-start;
+    color: var(--text-sub); font-size: 14px;
+  }
+  .faq-a .mark {
+    background: var(--ine-deep); color: var(--indigo);
+    width: 28px; height: 28px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: "Zen Maru Gothic", serif; font-weight: 900; font-size: 14px;
+    flex-shrink: 0;
+  }
+
+  /* お問い合わせ */
+  .contact {
+    background: linear-gradient(135deg, var(--sage-light) 0%, #B9D0B5 100%);
+    color: var(--indigo);
+    position: relative; overflow: hidden;
+  }
+  .contact::before {
+    content: ""; position: absolute; right: -60px; top: -60px;
+    width: 360px; height: 360px;
+    background: rgba(255,255,255,0.35);
+    clip-path: polygon(100% 0, 0 0, 100% 100%);
+  }
+  .contact::after {
+    content: ""; position: absolute; left: -60px; bottom: -60px;
+    width: 300px; height: 300px;
+    background: rgba(255,255,255,0.25);
+    clip-path: polygon(0 0, 0 100%, 100% 100%);
+  }
+  .contact .section-inner { position: relative; z-index: 1; }
+  .contact .section-head h2 { color: var(--indigo); }
+  .contact .section-head p { color: var(--text-sub); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+  .contact-card {
+    background: rgba(255,255,255,0.85);
+    border: 1px solid rgba(255,255,255,0.6);
+    border-radius: 14px;
+    padding: 36px 32px;
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(30,64,104,0.06);
+  }
+  .contact-card h3 { color: var(--indigo); margin: 0 0 8px; font-size: 22px; }
+  .contact-card .desc { font-size: 14px; color: var(--text-sub); margin: 0 0 24px; }
+  .contact-card .big-tel {
+    font-family: "Zen Maru Gothic", serif;
+    font-size: 36px; font-weight: 900; color: var(--crimson);
+    margin-bottom: 8px;
+  }
+  .contact-card .hours { font-size: 13px; color: var(--text-sub); margin-bottom: 20px; }
+  .contact-card .btn-form {
+    background: var(--crimson); color: #fff;
+    padding: 16px 32px; border-radius: 8px;
+    display: inline-block;
+    font-weight: 700; font-size: 16px;
+    margin-top: 16px;
+  }
+  .contact-card .btn-form:hover { background: var(--crimson-dark); color: #fff; }
+
+  /* フッター */
+  footer { background: var(--white); color: var(--indigo); padding: 50px 24px 24px; border-top: 1px solid var(--ine-deep); }
+  /* 博滇会グループサイトへの導線カード */
+  .group-site-card {
+    margin: 30px 0;
+    background: var(--ine);
+    border: 1px solid var(--ine-deep);
+    border-left: 4px solid var(--crimson);
+    border-radius: 10px;
+    padding: 18px 22px;
+    display: flex; align-items: center; gap: 18px;
+    color: var(--indigo);
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .group-site-card:hover {
+    background: var(--white);
+    box-shadow: 0 4px 16px rgba(30,64,104,0.10);
+    transform: translateY(-1px);
+  }
+  .group-site-card img {
+    height: 56px; width: auto;
+    flex-shrink: 0;
+    background: #fff;
+    padding: 6px;
+    border-radius: 6px;
+    border: 1px solid var(--ine-deep);
+  }
+  .group-site-card .gs-text { flex: 1; min-width: 0; }
+  .group-site-card .gs-name {
+    font-family: "Zen Maru Gothic", sans-serif;
+    font-size: 17px; font-weight: 700;
+    margin-bottom: 4px;
+    color: var(--indigo);
+  }
+  .group-site-card .gs-desc {
+    font-size: 12px; color: var(--text-sub);
+    line-height: 1.6;
+  }
+  .group-site-card .gs-arrow {
+    font-size: 22px;
+    flex-shrink: 0;
+    color: var(--crimson);
+    transition: transform 0.2s;
+  }
+  .group-site-card:hover .gs-arrow { transform: translateX(4px); }
+  @media (max-width: 680px) {
+    .group-site-card { flex-direction: column; text-align: center; }
+  }
+  .footer-inner { max-width: 1080px; margin: 0 auto; }
+  .footer-top {
+    display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 40px;
+    padding-bottom: 30px; border-bottom: 1px solid var(--ine-deep);
+  }
+  .footer-top h4 { font-size: 14px; color: var(--indigo); margin: 0 0 12px; letter-spacing: 0.05em; }
+  .footer-top ul { list-style: none; padding: 0; margin: 0; font-size: 13px; line-height: 2; }
+  .footer-top a { color: var(--text); }
+  .footer-top a:hover { color: var(--crimson); }
+  .footer-brand .logo { margin-bottom: 14px; }
+  .footer-brand p { font-size: 13px; color: var(--text-sub); margin: 0; }
+  .copyright { text-align: center; font-size: 12px; color: var(--text-sub); padding-top: 24px; }
+
+  /* サンプルバナー */
+  .sample-banner {
+    background: var(--indigo); color: #fff;
+    text-align: center; padding: 12px 16px;
+    font-size: 13px; letter-spacing: 0.05em;
+  }
+  .sample-banner strong { color: var(--sage-light); margin-right: 8px; }
+
+  /* レスポンシブ */
+  @media (max-width: 900px) {
+    .header-inner { flex-wrap: wrap; }
+    .gnav { display: none; }
+    .service-grid, .target-grid, .area-grid, .contact-grid, .intro-list { grid-template-columns: 1fr; }
+    .community-card { grid-template-columns: 1fr; padding: 36px 24px; gap: 24px; }
+    .news-item { grid-template-columns: 90px 1fr; row-gap: 8px; padding: 16px 20px; }
+    .news-item .ttl { grid-column: 1 / -1; }
+    .office-single { grid-template-columns: 1fr; }
+    .office-single .map-wrap { border-left: 0; border-top: 1px solid var(--border); }
+    .flow-step { grid-template-columns: 70px 1fr; gap: 16px; }
+    .flow-step .step-num { width: 60px; height: 60px; }
+    .flow-step h3 { font-size: 16px; }
+    .flow-step p { grid-column: 1 / -1; }
+    .info-grid { grid-template-columns: 1fr; }
+    .info-grid > div { border-right: 0; border-bottom: 1px solid var(--ine-deep); padding-bottom: 16px; }
+    .info-grid > div:last-child { border-bottom: 0; padding-bottom: 0; }
+    .footer-top { grid-template-columns: 1fr; }
+    .section-head h2 { font-size: 24px; }
+    section { padding: 60px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="sample-banner">
+  <strong>DESIGN SAMPLE</strong> 地域包括支援センターくるみ（さいたま市西区南部圏域） ／ 博滇会ブランドカラー（深藍・深紅・稲・若葉）適用版
+</div>
+
+<!-- ヘッダー -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="logo">
+      <img src="hakushinkai_logo_mark.png" alt="医療法人 博滇会" class="logo-mark-img">
+      <div class="logo-divider"></div>
+      <div class="logo-text">
+        <div class="ja">地域包括支援センターくるみ</div>
+        <div class="sub">さいたま市西区南部圏域 ／ 医療法人 博滇会グループ</div>
+      </div>
+    </div>
+    <nav class="gnav">
+      <a href="#about">センターとは</a>
+      <a href="#services">4つの業務</a>
+      <a href="#target">こんな方へ</a>
+      <a href="#flow">ご利用の流れ</a>
+      <a href="#offices">施設情報</a>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
+    <div class="header-cta">
+      <a href="#" class="btn-recruit-header">求人情報</a>
+      <a href="tel:0486228103" class="btn-tel-header">📞 048-622-8103</a>
+    </div>
+  </div>
+</header>
+
+<!-- ファーストビュー（写真＋キャッチコピーのみ） -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1 class="hero-catch">
+      住み慣れたこの街で、<br><span class="accent">いつまでも自分らしく。</span>
+    </h1>
+    <p class="hero-sub">高齢者の暮らしをささえる、地域の相談窓口です。</p>
+  </div>
+</section>
+
+<!-- ヒーロー下〜「地域包括支援センターとは」をロゴ浮遊で包む -->
+<div class="flutter-wrap">
+  <div class="logo-flutter logo-flutter-light" aria-hidden="true">
+    <img src="hakushinkai_symbol.png" alt="">
+    <img src="hakushinkai_symbol.png" alt="">
+    <img src="hakushinkai_symbol.png" alt="">
+    <img src="hakushinkai_symbol.png" alt="">
+    <img src="hakushinkai_symbol.png" alt="">
+    <img src="hakushinkai_symbol.png" alt="">
+    <img src="hakushinkai_symbol.png" alt="">
+  </div>
+
+<!-- ヒーロー直下：CTA＋紹介文 -->
+<section class="intro-message">
+  <div class="container">
+    <div class="intro-cta">
+      <a href="tel:0486228103" class="btn-primary">📞 お電話で相談する</a>
+      <a href="#services" class="btn-secondary">4つの業務を見る →</a>
+    </div>
+    <p>
+      さいたま市から委託を受けた、西区南部圏域を担当する<span class="highlight">公的な相談窓口</span>です。<br>
+      介護・医療・暮らしのことなど、何でもお気軽にご相談ください。ご家族やご近所の方からのご相談も歓迎しています。
+    </p>
+  </div>
+</section>
+
+<!-- 情報バー -->
+<div class="info-bar-wrap">
+  <div class="info-bar">
+    <div class="info-grid">
+      <div>
+        <div class="label">ご相談</div>
+        <div class="value">すべて無料<small>さいたま市から委託の公的窓口</small></div>
+      </div>
+      <div>
+        <div class="label">担当圏域</div>
+        <div class="value">さいたま市西区南部<small>お住まいの地域で担当が決まります</small></div>
+      </div>
+      <div>
+        <div class="label">受付時間</div>
+        <div class="value">9:00〜17:00<small>年中無休（年末年始 12/29〜1/3 休）</small></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 地域包括支援センターとは -->
+<section class="intro" id="about">
+  <div class="section-inner">
+    <div class="section-head">
+      <h2>「地域包括支援センター」とは</h2>
+      <p>はじめての方にも、わかりやすくご案内します。<br><span style="font-size:13px;">※ さいたま市では「<strong>シニアサポートセンター</strong>」の名称で27か所に設置されています。当センターは「南部圏域シニアサポートセンター くるみ」です。</span></p>
+    </div>
+    <div class="intro-card">
+      <p class="leader">
+        <em>さいたま市から委託された、</em><br>
+        地域の高齢者の<em>公的な相談窓口</em>です。
+      </p>
+      <p>
+        保健師（または経験のある看護師）・主任ケアマネジャー・社会福祉士の資格を持ったスタッフが、専門知識を活かして相談に応じます。
+        相談内容は、介護や医療のことのほか、生活のことなど何でもご相談いただけます。
+        ご自身やご家族のこと以外にも、ご近所の方のことなどでも、悩んだり困ったりしていることは何でもご相談ください。
+      </p>
+      <ul class="intro-list">
+        <li>✅ 65歳以上の高齢者ご本人</li>
+        <li>✅ 高齢のご家族の介護で悩む方</li>
+        <li>✅ ご近所の高齢者が気がかりな方</li>
+        <li>✅ どこに相談したらよいか分からない方</li>
+      </ul>
+    </div>
+  </div>
+</section>
+</div><!-- /flutter-wrap -->
+
+<!-- サービス内容（4つの業務） -->
+<section class="services" id="services">
+  <div class="section-inner">
+    <div class="section-head">
+      <h2>4つの業務でささえます</h2>
+      <p>地域包括支援センターには、法律で定められた4つの主な業務があります。</p>
+    </div>
+    <div class="service-grid">
+      <div class="service-card">
+        <div class="num">業務 01</div>
+        <h3>総合相談支援</h3>
+        <p>「介護が必要かも」「最近もの忘れが…」など、高齢者ご本人やご家族からのあらゆるご相談を、まずはこちらでお受けします。必要な制度やサービスへおつなぎします。</p>
+      </div>
+      <div class="service-card">
+        <div class="num">業務 02</div>
+        <h3>権利擁護</h3>
+        <p>高齢者虐待への対応、消費者被害の防止、成年後見制度のご案内など、高齢者の権利と財産を守るためのサポートを行います。</p>
+      </div>
+      <div class="service-card">
+        <div class="num">業務 03</div>
+        <h3>包括的・継続的<br>ケアマネジメント支援</h3>
+        <p>地域のケアマネジャーへの助言や、医療・介護の専門職をつなぐネットワークづくりを通じて、地域全体で高齢者を支える体制を整えます。</p>
+      </div>
+      <div class="service-card">
+        <div class="num">業務 04</div>
+        <h3>介護予防ケアマネジメント</h3>
+        <p>要支援認定を受けた方や、これから介護が必要になる可能性のある方に対し、介護予防のためのケアプランを作成します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 支え合いの地域づくり -->
+<section class="community" id="community" style="position:relative; overflow:hidden;">
+  <div class="logo-flutter logo-flutter-light" aria-hidden="true">
+    <img src="hakushinkai_symbol.png" alt="">
+    <img src="hakushinkai_symbol.png" alt="">
+    <img src="hakushinkai_symbol.png" alt="">
+    <img src="hakushinkai_symbol.png" alt="">
+    <img src="hakushinkai_symbol.png" alt="">
+    <img src="hakushinkai_symbol.png" alt="">
+    <img src="hakushinkai_symbol.png" alt="">
+  </div>
+  <div class="section-inner" style="position:relative; z-index:2;">
+    <div class="section-head">
+      <h2>支え合いの地域づくり</h2>
+      <p>住み慣れた地域で、いつまでも自分らしく暮らしていけるように。</p>
+    </div>
+    <div class="community-card">
+      <div class="text">
+        <h3><span class="badge">地域支え合い推進員</span><br>住民同士の助け合いを、お手伝いします。</h3>
+        <p>
+          地域包括支援センターには、<strong>地域支え合い推進員</strong>が配置されています。
+          地域住民の方がいつまでも住み慣れた地域で暮らしていけるよう、住民同士の助け合いの仕組みを作ったり、
+          体操やおしゃべりなどを楽しめる集いの場を地域に作ったりするお手伝いをしています。
+        </p>
+        <p style="font-size:13px;color:var(--text-sub);">
+          ※ 「集いの場をはじめてみたい」「地域でこんな活動ができたら…」というご相談も歓迎しています。
+        </p>
+      </div>
+      <div class="activities">
+        <h4>定期的に開催している活動</h4>
+        <ul>
+          <li>
+            <span class="ico">☕</span>
+            <div>
+              <span class="ttl">オレンジカフェ西遊馬</span>
+              <span class="desc">認知症の方とご家族が安心して集える、地域のカフェです。</span>
+            </div>
+          </li>
+          <li>
+            <span class="ico">🤝</span>
+            <div>
+              <span class="ttl">介護者サロン</span>
+              <span class="desc">介護をしている方が集まり、お話し・情報交換できる場です。</span>
+            </div>
+          </li>
+          <li>
+            <span class="ico">📱</span>
+            <div>
+              <span class="ttl">シニアのためのスマホ教室</span>
+              <span class="desc">スマートフォンの基本操作を、ゆっくり一緒に学べます。</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 新着情報 -->
+<section class="news" id="news">
+  <div class="section-inner">
+    <div class="section-head">
+      <h2>新着情報</h2>
+      <p>地域活動・お知らせの最新情報をご案内します。</p>
+    </div>
+    <div class="news-list">
+      <div class="news-item">
+        <span class="date">2024.02.08</span>
+        <span class="cat event">イベント</span>
+        <span class="ttl">シニアのためのスマホ教室を開催します</span>
+      </div>
+      <div class="news-item">
+        <span class="date">2024.01.20</span>
+        <span class="cat cafe">カフェ</span>
+        <span class="ttl">オレンジカフェ西遊馬を開催します</span>
+      </div>
+      <div class="news-item">
+        <span class="date">2023.12.19</span>
+        <span class="cat salon">サロン</span>
+        <span class="ttl">介護者サロンを開催します</span>
+      </div>
+      <div class="news-item">
+        <span class="date">2023.12.16</span>
+        <span class="cat cafe">カフェ</span>
+        <span class="ttl">オレンジカフェ西遊馬を開催します</span>
+      </div>
+      <div class="news-item">
+        <span class="date">2023.10.21</span>
+        <span class="cat cafe">カフェ</span>
+        <span class="ttl">オレンジカフェ西遊馬を開催します</span>
+      </div>
+    </div>
+    <p style="text-align:center;font-size:12px;color:var(--text-sub);margin-top:16px;">
+      ※ 上記は元ページから抜粋した参考情報です。実装時は最新情報に差し替えてください。
+    </p>
+  </div>
+</section>
+
+<!-- ご利用対象（こんな方へ） -->
+<section class="target" id="target">
+  <div class="section-inner">
+    <div class="section-head">
+      <h2>こんなときは、ご相談ください</h2>
+      <p>少しでも気がかりがあれば、ひとりで抱え込まずにお声がけください。</p>
+    </div>
+    <div class="target-grid">
+      <div class="target-card">
+        <div class="ico">💭</div>
+        <h3>介護のはじまりに</h3>
+        <p>「介護保険って何？」「申請ってどうするの？」など、はじめての方の最初の窓口です。</p>
+      </div>
+      <div class="target-card">
+        <div class="ico">🩺</div>
+        <h3>健康・もの忘れ</h3>
+        <p>もの忘れが気になる、外出が減ってきた、といった健康面の心配にも保健師が対応します。</p>
+      </div>
+      <div class="target-card">
+        <div class="ico">🛡️</div>
+        <h3>暮らしを守る</h3>
+        <p>悪質な訪問販売、高齢者虐待、認知症の方の財産管理など、権利と暮らしを守るご相談に。</p>
+      </div>
+      <div class="target-card">
+        <div class="ico">👪</div>
+        <h3>ご家族の負担</h3>
+        <p>介護で疲れていませんか。ご家族のお気持ちや負担についても、お話をうかがいます。</p>
+      </div>
+      <div class="target-card">
+        <div class="ico">🏠</div>
+        <h3>ご近所が心配</h3>
+        <p>「ひとり暮らしのお隣さんが心配」など、地域からのご相談・ご連絡も歓迎しています。</p>
+      </div>
+      <div class="target-card">
+        <div class="ico">🤝</div>
+        <h3>専門職の連携</h3>
+        <p>地域のケアマネジャー・医療機関・介護事業所からの相談・連携も承っています。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ご利用の流れ -->
+<section class="flow" id="flow">
+  <div class="section-inner">
+    <div class="section-head">
+      <h2>ご利用の流れ</h2>
+      <p>お問い合わせから、サポート開始までの4ステップ。</p>
+    </div>
+    <div class="flow-list">
+      <div class="flow-step">
+        <div class="step-num"><span class="label-step">STEP</span><span class="num">1</span></div>
+        <h3>お問い合わせ</h3>
+        <p>お電話・お問い合わせフォーム・ご来所のいずれかでご連絡ください。ご家族・ご近所の方からのご相談も承ります。</p>
+      </div>
+      <div class="flow-step">
+        <div class="step-num"><span class="label-step">STEP</span><span class="num">2</span></div>
+        <h3>ご相談・状況の確認</h3>
+        <p>専門職（保健師・社会福祉士・主任ケアマネジャー）が、お困りごとや状況をていねいにうかがいます。必要に応じてご自宅にもうかがいます。</p>
+      </div>
+      <div class="flow-step">
+        <div class="step-num"><span class="label-step">STEP</span><span class="num">3</span></div>
+        <h3>ご提案・おつなぎ</h3>
+        <p>ご状況に合わせて、必要な制度・サービス・専門機関をご案内します。介護保険の申請サポートも行います。</p>
+      </div>
+      <div class="flow-step">
+        <div class="step-num"><span class="label-step">STEP</span><span class="num">4</span></div>
+        <h3>継続的な見守り</h3>
+        <p>ご利用開始後も、地域の専門職と連携しながら、暮らしの変化に合わせて継続的にサポートします。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 対応エリア -->
+<section class="area" id="area" style="position:relative; overflow:hidden;">
+  <div class="logo-flutter logo-flutter-light" aria-hidden="true">
+    <img src="hakushinkai_symbol.png" alt="">
+    <img src="hakushinkai_symbol.png" alt="">
+    <img src="hakushinkai_symbol.png" alt="">
+    <img src="hakushinkai_symbol.png" alt="">
+    <img src="hakushinkai_symbol.png" alt="">
+    <img src="hakushinkai_symbol.png" alt="">
+    <img src="hakushinkai_symbol.png" alt="">
+  </div>
+  <div class="section-inner" style="position:relative; z-index:2;">
+    <div class="section-head">
+      <h2>担当エリア</h2>
+      <p>さいたま市から委託を受け、<strong>西区 南部圏域</strong>にお住まいの高齢者の方をサポートしています。</p>
+    </div>
+    <div class="area-grid">
+      <div class="area-list-note" style="max-width:920px;">
+        <div style="background:var(--white);border:1px solid var(--ine-deep);border-radius:14px;padding:32px 32px 28px;box-shadow:0 2px 10px rgba(30,64,104,0.05);">
+          <div style="text-align:center;margin-bottom:20px;">
+            <span style="display:inline-block;background:var(--sage);color:#fff;font-family:'Zen Maru Gothic',sans-serif;font-weight:700;font-size:15px;padding:8px 20px;border-radius:20px;">さいたま市 西区 ／ 南部圏域</span>
+          </div>
+          <div class="area-tags" style="justify-content:center;">
+            <span class="area-tag">飯田</span>
+            <span class="area-tag">飯田新田</span>
+            <span class="area-tag">植田谷本</span>
+            <span class="area-tag">植田谷本村新田</span>
+            <span class="area-tag">佐知川</span>
+            <span class="area-tag">三条町</span>
+            <span class="area-tag">島根</span>
+            <span class="area-tag">昭和</span>
+            <span class="area-tag">塚本</span>
+            <span class="area-tag">塚本町 1〜3丁目</span>
+            <span class="area-tag">土屋</span>
+            <span class="area-tag">中野林</span>
+            <span class="area-tag featured">西遊馬</span>
+            <span class="area-tag">二ツ宮</span>
+            <span class="area-tag">プラザ</span>
+            <span class="area-tag">水判土</span>
+            <span class="area-tag">三橋 5丁目</span>
+            <span class="area-tag">湯木町 1〜2丁目</span>
+          </div>
+        </div>
+        <p style="font-size:13px;color:var(--text-sub);margin:22px 0 0;text-align:center;line-height:1.9;">
+          ※ 上記はさいたま市が定める当センターの担当地域です（令和8年3月1日時点）。<br>
+          ※ 担当エリアは、お住まいの地域によってセンターごとに決められています。エリア外の方は、お住まいの地域の担当センターをご案内いたします。<br>
+          ※ 担当エリアの詳細はお気軽にお問い合わせください。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 施設情報 -->
+<section class="offices" id="offices">
+  <div class="section-inner">
+    <div class="section-head">
+      <h2>施設情報</h2>
+      <p>お気軽にご来所・お電話ください。</p>
+    </div>
+    <div class="office-single">
+      <div class="head">
+        <span class="area-label">さいたま市西区南部圏域 担当</span>
+        <h3>地域包括支援センターくるみ</h3>
+        <span style="display:block;margin-top:6px;font-size:12px;opacity:0.9;">さいたま市の名称：南部圏域シニアサポートセンター くるみ</span>
+      </div>
+      <div class="body">
+        <div class="info-row"><span class="lbl">所在地</span><span>〒331-0061<br>さいたま市西区西遊馬771-2</span></div>
+        <div class="info-row"><span class="lbl">電話番号</span><span>048-622-8103</span></div>
+        <div class="info-row"><span class="lbl">FAX</span><span>048-622-8104</span></div>
+        <div class="info-row"><span class="lbl">営業時間</span><span>午前9時〜午後5時<br><span style="font-size:12px;color:var(--text-sub);">年中無休（年末年始休業 12/29〜1/3）</span></span></div>
+        <div class="info-row"><span class="lbl">職員体制</span><span>保健師（または経験のある看護師）<br>主任ケアマネジャー／社会福祉士<br>地域支え合い推進員</span></div>
+        <a href="tel:0486228103" class="tel-btn">📞 048-622-8103</a>
+      </div>
+      <div class="map-wrap">
+        <iframe src="https://maps.google.com/maps?q=%E3%81%95%E3%81%84%E3%81%9F%E3%81%BE%E5%B8%82%E8%A5%BF%E5%8C%BA%E8%A5%BF%E9%81%8A%E9%A6%AC771-2&hl=ja&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="地域包括支援センターくるみの地図"></iframe>
+        <a href="https://maps.google.com/?q=%E3%81%95%E3%81%84%E3%81%9F%E3%81%BE%E5%B8%82%E8%A5%BF%E5%8C%BA%E8%A5%BF%E9%81%8A%E9%A6%AC771-2" target="_blank" rel="noopener" class="office-map-link">🗺 大きな地図で見る</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="section-inner">
+    <div class="section-head">
+      <h2>よくあるご質問</h2>
+      <p>はじめての方からよくいただくご質問にお答えします。</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q"><span class="mark">Q</span><span>相談だけでも大丈夫ですか？費用はかかりますか？</span></div>
+        <div class="faq-a"><span class="mark">A</span><span>はい、相談はすべて無料です。さいたま市から委託を受けた公的な窓口ですので、ご利用者様のご負担はありません。お気軽にお声がけください。</span></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span class="mark">Q</span><span>本人ではなく、家族や近所の人からの相談でもよいですか？</span></div>
+        <div class="faq-a"><span class="mark">A</span><span>もちろんです。ご家族・ご親族・ご近所の方・地域の民生委員の方など、どなたからのご相談・ご連絡も歓迎しています。「あの人が気がかりで…」という小さな声がけが、見守りの第一歩になります。</span></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span class="mark">Q</span><span>居宅介護支援事業所（ケアマネジャー）と何が違うのですか？</span></div>
+        <div class="faq-a"><span class="mark">A</span><span>居宅介護支援事業所は要介護1〜5の方のケアプランを作成します。地域包括支援センターは、要支援1・2の方や、介護認定を受ける前の段階のご相談、地域全体の支援体制づくりまでを幅広く担当します。</span></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span class="mark">Q</span><span>担当のセンターはどう決まりますか？</span></div>
+        <div class="faq-a"><span class="mark">A</span><span>お住まいの地域（中学校区などの担当エリア）によって、担当のセンターがさいたま市ごとに決められています。当センターの担当エリア外の方は、最寄りのセンターをご案内いたしますのでお気軽にお問い合わせください。</span></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span class="mark">Q</span><span>個人情報や相談内容は守られますか？</span></div>
+        <div class="faq-a"><span class="mark">A</span><span>ご相談の内容は、関係法令に基づき厳重に守秘いたします。ご本人の同意なしに外部へお伝えすることはありません。</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- お問い合わせ -->
+<section class="contact" id="contact">
+  <div class="section-inner">
+    <div class="section-head">
+      <h2>お問い合わせ</h2>
+      <p>お電話・お問い合わせフォームの2つの方法でお気軽にどうぞ。</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>📞 お電話でのご相談</h3>
+        <p class="desc">専門職がていねいにお話をうかがいます。</p>
+        <div class="big-tel">048-622-8103</div>
+        <p class="hours">営業時間：午前9時〜午後5時<br>年中無休（年末年始休業 12/29〜1/3）</p>
+        <a href="tel:0486228103" class="btn-form">電話をかける →</a>
+      </div>
+      <div class="contact-card">
+        <h3>✉ お問い合わせフォーム</h3>
+        <p class="desc">入力項目は最小限。お気軽にご連絡ください。</p>
+        <ul style="text-align:left; max-width:300px; margin: 20px auto; padding-left:20px; font-size:13px; color:var(--text-sub);">
+          <li>お名前（ご相談者）</li>
+          <li>ご連絡先（電話番号またはメール）</li>
+          <li>ご本人との関係（ご本人／ご家族／近隣の方／専門職 など）</li>
+          <li>ご相談内容</li>
+        </ul>
+        <a href="#" class="btn-form">フォームを開く →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- フッター -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo">
+          <img src="hakushinkai_logo_mark.png" alt="医療法人 博滇会" class="logo-mark-img">
+          <div class="logo-divider"></div>
+          <div class="logo-text">
+            <div class="ja">地域包括支援センターくるみ</div>
+            <div class="sub">医療法人 博滇会グループ</div>
+          </div>
+        </div>
+        <p style="margin-top:14px;">さいたま市から委託を受け、西区南部圏域の高齢者の暮らしをささえる公的な相談窓口です。</p>
+      </div>
+      <div>
+        <h4>サイト内リンク</h4>
+        <ul>
+          <li><a href="#about">センターとは</a></li>
+          <li><a href="#services">4つの業務</a></li>
+          <li><a href="#target">こんな方へ</a></li>
+          <li><a href="#flow">ご利用の流れ</a></li>
+          <li><a href="#offices">施設情報</a></li>
+          <li><a href="#contact">お問い合わせ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>関連サイト</h4>
+        <ul>
+          <li><a href="#">医療法人 博滇会</a></li>
+          <li><a href="#">湯澤医院</a></li>
+          <li><a href="#">居宅介護支援事業所くるみ</a></li>
+          <li><a href="#">求人情報</a></li>
+          <li><a href="#">プライバシーポリシー</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- 博滇会グループサイトへの導線 -->
+    <a class="group-site-card" href="https://hakushinkai.jp/" target="_blank" rel="noopener">
+      <img src="hakushinkai_logo.png" alt="医療法人 博滇会">
+      <div class="gs-text">
+        <div class="gs-name">医療法人 博滇会グループ</div>
+        <div class="gs-desc">地域包括支援センターくるみは博滇会グループの一員です。グループサイトはこちら</div>
+      </div>
+      <div class="gs-arrow">→</div>
+    </a>
+    <div class="copyright">
+      © 地域包括支援センターくるみ ／ 医療法人 博滇会グループ
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
