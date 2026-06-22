@@ -9,10 +9,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
   :root {
-    --indigo: #1E4068;
-    --indigo-dark: #13294A;
-    --crimson: #A93A2E;
-    --crimson-dark: #832C23;
+    --indigo: #46603F;
+    --indigo-dark: #34492D;
+    --crimson: #E4C939;
+    --crimson-dark: #CDB320;
+    --on-accent: #2E4A2B;
     --ine: #F2EEE3;
     --ine-deep: #E8E0CC;
     --sage: #9DB899;
@@ -72,13 +73,13 @@
 
   .header-cta { display: flex; gap: 10px; align-items: center; }
   .btn-tel-header {
-    background: var(--crimson); color: #fff;
+    background: var(--crimson); color: var(--on-accent);
     padding: 10px 18px; border-radius: 6px;
     font-weight: 700; font-size: 14px;
     display: flex; align-items: center; gap: 8px;
     border: 0; cursor: pointer; font-family: inherit;
   }
-  .btn-tel-header:hover { background: var(--crimson-dark); color: #fff; }
+  .btn-tel-header:hover { background: var(--crimson-dark); color: var(--on-accent); }
   .btn-recruit-header {
     background: var(--white); color: var(--indigo);
     border: 1.5px solid var(--indigo);
@@ -103,7 +104,7 @@
   }
   .hero-overlay {
     position: absolute; inset: 0;
-    background: linear-gradient(180deg, rgba(30,64,104,0.25) 0%, rgba(79,107,77,0.25) 50%, rgba(30,64,104,0.50) 100%);
+    background: linear-gradient(180deg, rgba(70,96,63,0.25) 0%, rgba(79,107,77,0.22) 50%, rgba(52,73,45,0.52) 100%);
     z-index: 1;
   }
   @keyframes heroFade {
@@ -128,6 +129,13 @@
     letter-spacing: 0.04em;
   }
   .hero-catch .accent { color: #FFE8C7; display: inline-block; }
+  .hero-catch::after {
+    content: ""; display: block;
+    width: 70px; height: 6px; border-radius: 3px;
+    background: var(--crimson);
+    margin: 24px auto 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.35);
+  }
   .hero-sub {
     margin: 22px 0 0; font-size: clamp(14px, 2.2vw, 18px);
     font-family: "Zen Maru Gothic", sans-serif; font-weight: 500;
@@ -213,6 +221,7 @@
     padding: 28px 32px;
     box-shadow: 0 4px 18px rgba(30,64,104,0.08);
     border: 1px solid var(--ine-deep);
+    border-top: 5px solid var(--crimson);
   }
   .info-grid {
     display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
@@ -241,16 +250,16 @@
 
   /* ボタン共通（intro-cta用） */
   .btn-primary {
-    background: var(--crimson); color: #fff;
+    background: var(--crimson); color: var(--on-accent);
     padding: 18px 34px; border-radius: 50px;
     font-weight: 700; font-size: 16px;
     font-family: inherit;
     display: inline-flex; align-items: center; gap: 10px;
-    box-shadow: 0 6px 18px rgba(169,58,46,0.30);
+    box-shadow: 0 6px 18px rgba(70,96,63,0.28);
     transition: 0.2s;
     border: 0; cursor: pointer;
   }
-  .btn-primary:hover { background: var(--crimson-dark); color: #fff; transform: translateY(-2px); }
+  .btn-primary:hover { background: var(--crimson-dark); color: var(--on-accent); transform: translateY(-2px); }
   .btn-secondary {
     background: var(--white);
     color: var(--indigo);
@@ -266,7 +275,16 @@
   section { padding: 80px 24px; }
   .section-inner { max-width: 1080px; margin: 0 auto; }
   .section-head { text-align: center; margin-bottom: 50px; }
-  .section-head h2 { font-size: 30px; color: var(--indigo); margin: 0 0 12px; }
+  .section-head h2 {
+    font-size: 30px; color: var(--indigo); margin: 0 0 12px;
+    display: inline-block; position: relative; padding-bottom: 16px;
+  }
+  .section-head h2::after {
+    content: ""; position: absolute; left: 50%; bottom: 0;
+    transform: translateX(-50%);
+    width: 56px; height: 5px; border-radius: 3px;
+    background: var(--crimson);
+  }
   .section-head p { color: var(--text-sub); margin: 0; }
 
   /* 地域包括支援センターとは */
@@ -307,9 +325,11 @@
   }
   .service-card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(30,64,104,0.1); }
   .service-card .num {
-    color: var(--sage); font-family: "Zen Maru Gothic", serif;
-    font-size: 14px; font-weight: 700; letter-spacing: 0.15em;
-    margin-bottom: 8px;
+    display: inline-block;
+    background: var(--crimson); color: var(--on-accent);
+    font-family: "Zen Maru Gothic", serif;
+    font-size: 12px; font-weight: 700; letter-spacing: 0.12em;
+    margin-bottom: 14px; padding: 4px 14px; border-radius: 20px;
   }
   .service-card h3 { font-size: 20px; color: var(--indigo); margin: 0 0 8px; }
   .service-card .sub {
@@ -478,14 +498,14 @@
   .office-single .tel-btn {
     margin-top: 10px;
     display: flex; align-items: center; justify-content: center; gap: 8px;
-    background: var(--ine); color: var(--crimson);
+    background: var(--ine); color: var(--indigo);
     padding: 16px; border-radius: 8px;
     font-weight: 700; font-size: 20px;
-    border: 2px solid var(--crimson);
+    border: 2px solid var(--indigo);
     transition: 0.2s;
     font-family: "Zen Maru Gothic", serif;
   }
-  .office-single .tel-btn:hover { background: var(--crimson); color: #fff; }
+  .office-single .tel-btn:hover { background: var(--indigo); color: #fff; }
   .office-single .map-wrap {
     padding: 28px 32px 32px;
     border-left: 1px solid var(--border);
@@ -500,7 +520,7 @@
     font-size: 13px; color: var(--sage-dark);
     margin-top: 10px;
   }
-  .office-single .office-map-link:hover { color: var(--crimson); }
+  .office-single .office-map-link:hover { color: var(--indigo); }
 
   /* FAQ */
   .faq { background: var(--white); }
@@ -517,7 +537,7 @@
     margin-bottom: 8px;
   }
   .faq-q .mark {
-    background: var(--sage); color: #fff;
+    background: var(--crimson); color: var(--on-accent);
     width: 28px; height: 28px; border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
     font-family: "Zen Maru Gothic", serif; font-weight: 900; font-size: 14px;
@@ -569,18 +589,18 @@
   .contact-card .desc { font-size: 14px; color: var(--text-sub); margin: 0 0 24px; }
   .contact-card .big-tel {
     font-family: "Zen Maru Gothic", serif;
-    font-size: 36px; font-weight: 900; color: var(--crimson);
+    font-size: 36px; font-weight: 900; color: var(--indigo);
     margin-bottom: 8px;
   }
   .contact-card .hours { font-size: 13px; color: var(--text-sub); margin-bottom: 20px; }
   .contact-card .btn-form {
-    background: var(--crimson); color: #fff;
+    background: var(--crimson); color: var(--on-accent);
     padding: 16px 32px; border-radius: 8px;
     display: inline-block;
     font-weight: 700; font-size: 16px;
     margin-top: 16px;
   }
-  .contact-card .btn-form:hover { background: var(--crimson-dark); color: #fff; }
+  .contact-card .btn-form:hover { background: var(--crimson-dark); color: var(--on-accent); }
 
   /* フッター */
   footer { background: var(--white); color: var(--indigo); padding: 50px 24px 24px; border-top: 1px solid var(--ine-deep); }
@@ -624,7 +644,7 @@
   .group-site-card .gs-arrow {
     font-size: 22px;
     flex-shrink: 0;
-    color: var(--crimson);
+    color: var(--indigo);
     transition: transform 0.2s;
   }
   .group-site-card:hover .gs-arrow { transform: translateX(4px); }
@@ -639,7 +659,7 @@
   .footer-top h4 { font-size: 14px; color: var(--indigo); margin: 0 0 12px; letter-spacing: 0.05em; }
   .footer-top ul { list-style: none; padding: 0; margin: 0; font-size: 13px; line-height: 2; }
   .footer-top a { color: var(--text); }
-  .footer-top a:hover { color: var(--crimson); }
+  .footer-top a:hover { color: var(--sage-dark); }
   .footer-brand .logo { margin-bottom: 14px; }
   .footer-brand p { font-size: 13px; color: var(--text-sub); margin: 0; }
   .copyright { text-align: center; font-size: 12px; color: var(--text-sub); padding-top: 24px; }
@@ -681,7 +701,7 @@
 <body>
 
 <div class="sample-banner">
-  <strong>DESIGN SAMPLE</strong> 地域包括支援センターくるみ（さいたま市西区南部圏域） ／ 博滇会ブランドカラー（深藍・深紅・稲・若葉）適用版
+  <strong>DESIGN SAMPLE</strong> 地域包括支援センターくるみ（さいたま市西区南部圏域） ／ グリーン×イエロー配色版
 </div>
 
 <!-- ヘッダー -->
