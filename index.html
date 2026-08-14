@@ -312,6 +312,17 @@
     border-left: 4px solid var(--sage);
     list-style: none; font-size: 14px;
   }
+  .relief-lead {
+    font-family: "Zen Maru Gothic", serif; font-weight: 700;
+    color: var(--indigo); font-size: 16px;
+    margin: 34px 0 14px;
+  }
+  .relief-chips { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+  .relief-chips span {
+    background: var(--white); border: 1.5px solid var(--sage);
+    color: var(--indigo); padding: 8px 15px; border-radius: 20px;
+    font-size: 13.5px; font-weight: 500;
+  }
 
   /* サービス内容（4つの業務） */
   .services { background: var(--bg); }
@@ -701,7 +712,7 @@
 <body>
 
 <div class="sample-banner">
-  <strong>DESIGN SAMPLE</strong> 地域包括支援センターくるみ（さいたま市西区南部圏域） ／ グリーン×イエロー配色版
+  <strong>DESIGN SAMPLE</strong> 地域包括支援センターくるみ（さいたま市西区南部圏域） ／ グリーン×イエロー配色・7セクション版
 </div>
 
 <!-- ヘッダー -->
@@ -717,9 +728,9 @@
     </div>
     <nav class="gnav">
       <a href="#about">センターとは</a>
-      <a href="#services">4つの業務</a>
-      <a href="#target">こんな方へ</a>
-      <a href="#flow">ご利用の流れ</a>
+      <a href="#services">役割</a>
+      <a href="#news">新着情報</a>
+      <a href="#area">担当エリア</a>
       <a href="#offices">施設情報</a>
       <a href="#contact">お問い合わせ</a>
     </nav>
@@ -811,6 +822,15 @@
         <li>✅ ご近所の高齢者が気がかりな方</li>
         <li>✅ どこに相談したらよいか分からない方</li>
       </ul>
+      <p class="relief-lead">こんなことも、お気軽にご相談ください</p>
+      <div class="relief-chips">
+        <span>💭 介護のはじまり</span>
+        <span>🩺 健康・もの忘れ</span>
+        <span>🛡️ 暮らしを守る</span>
+        <span>👪 ご家族の負担</span>
+        <span>🏠 ご近所が心配</span>
+        <span>🤝 専門職の連携</span>
+      </div>
     </div>
   </div>
 </section>
@@ -847,64 +867,6 @@
         <h3>介護予防ケアマネジメント</h3>
         <p class="sub">地域の皆さんの状態にあわせて、介護予防のお手伝いをします。</p>
         <p>ご本人の「したい」「できるようになりたい」ことの実現に向けて、状態等を確認しながら必要なサービスが利用できるよう、ケアプランの作成を行います。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 支え合いの地域づくり -->
-<section class="community" id="community" style="position:relative; overflow:hidden;">
-  <div class="logo-flutter logo-flutter-light" aria-hidden="true">
-    <img src="hakushinkai_symbol.png" alt="">
-    <img src="hakushinkai_symbol.png" alt="">
-    <img src="hakushinkai_symbol.png" alt="">
-    <img src="hakushinkai_symbol.png" alt="">
-    <img src="hakushinkai_symbol.png" alt="">
-    <img src="hakushinkai_symbol.png" alt="">
-    <img src="hakushinkai_symbol.png" alt="">
-  </div>
-  <div class="section-inner" style="position:relative; z-index:2;">
-    <div class="section-head">
-      <h2>支え合いの地域づくり</h2>
-      <p>住み慣れた地域で、いつまでも自分らしく暮らしていけるように。</p>
-    </div>
-    <div class="community-card">
-      <div class="text">
-        <h3><span class="badge">地域支え合い推進員</span><br>住民同士の助け合いを、お手伝いします。</h3>
-        <p>
-          地域包括支援センターには、<strong>地域支え合い推進員</strong>が配置されています。
-          地域住民の方がいつまでも住み慣れた地域で暮らしていけるよう、住民同士の助け合いの仕組みを作ったり、
-          体操やおしゃべりなどを楽しめる集いの場を地域に作ったりするお手伝いをしています。
-        </p>
-        <p style="font-size:13px;color:var(--text-sub);">
-          ※ 「集いの場をはじめてみたい」「地域でこんな活動ができたら…」というご相談も歓迎しています。
-        </p>
-      </div>
-      <div class="activities">
-        <h4>開催している活動</h4>
-        <ul>
-          <li>
-            <span class="ico">☕</span>
-            <div>
-              <span class="ttl">オレンジカフェ西遊馬</span>
-              <span class="desc">認知症の方とご家族が安心して集える、地域のカフェです。</span>
-            </div>
-          </li>
-          <li>
-            <span class="ico">🤝</span>
-            <div>
-              <span class="ttl">介護者サロン</span>
-              <span class="desc">介護をしている方が集まり、お話し・情報交換できる場です。</span>
-            </div>
-          </li>
-          <li>
-            <span class="ico">📱</span>
-            <div>
-              <span class="ttl">シニアのためのスマホ教室</span>
-              <span class="desc">スマートフォンの基本操作を、ゆっくり一緒に学べます。</span>
-            </div>
-          </li>
-        </ul>
       </div>
     </div>
   </div>
@@ -947,80 +909,6 @@
     <p style="text-align:center;font-size:12px;color:var(--text-sub);margin-top:16px;">
       ※ 上記は元ページから抜粋した参考情報です。実装時は最新情報に差し替えてください。
     </p>
-  </div>
-</section>
-
-<!-- ご利用対象（こんな方へ） -->
-<section class="target" id="target">
-  <div class="section-inner">
-    <div class="section-head">
-      <h2>こんなときは、ご相談ください</h2>
-      <p>少しでも気がかりがあれば、ひとりで抱え込まずにお声がけください。</p>
-    </div>
-    <div class="target-grid">
-      <div class="target-card">
-        <div class="ico">💭</div>
-        <h3>介護のはじまりに</h3>
-        <p>「介護保険って何？」「申請ってどうするの？」など、はじめての方の最初の窓口です。</p>
-      </div>
-      <div class="target-card">
-        <div class="ico">🩺</div>
-        <h3>健康・もの忘れ</h3>
-        <p>もの忘れが気になる、外出が減ってきた、といった健康面の心配にも対応します。</p>
-      </div>
-      <div class="target-card">
-        <div class="ico">🛡️</div>
-        <h3>暮らしを守る</h3>
-        <p>悪質な訪問販売、高齢者虐待、認知症の方の財産管理など、権利と暮らしを守るご相談に。</p>
-      </div>
-      <div class="target-card">
-        <div class="ico">👪</div>
-        <h3>ご家族の負担</h3>
-        <p>介護で疲れていませんか。ご家族のお気持ちや負担についても、お話をうかがいます。</p>
-      </div>
-      <div class="target-card">
-        <div class="ico">🏠</div>
-        <h3>ご近所が心配</h3>
-        <p>「ひとり暮らしのお隣さんが心配」など、地域からのご相談・ご連絡も歓迎しています。</p>
-      </div>
-      <div class="target-card">
-        <div class="ico">🤝</div>
-        <h3>専門職の連携</h3>
-        <p>地域のケアマネジャー・医療機関・介護事業所からの相談・連携も承っています。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ご利用の流れ -->
-<section class="flow" id="flow">
-  <div class="section-inner">
-    <div class="section-head">
-      <h2>ご利用の流れ</h2>
-      <p>お問い合わせから、サポート開始までの4ステップ。</p>
-    </div>
-    <div class="flow-list">
-      <div class="flow-step">
-        <div class="step-num"><span class="label-step">STEP</span><span class="num">1</span></div>
-        <h3>お問い合わせ</h3>
-        <p>お電話・お問い合わせフォーム・ご来所のいずれかでご連絡ください。ご家族・ご近所の方からのご相談も承ります。</p>
-      </div>
-      <div class="flow-step">
-        <div class="step-num"><span class="label-step">STEP</span><span class="num">2</span></div>
-        <h3>ご相談・状況の確認</h3>
-        <p>専門職（保健師・社会福祉士・主任ケアマネジャー）が、お困りごとや状況をていねいにうかがいます。必要に応じてご自宅にもうかがいます。</p>
-      </div>
-      <div class="flow-step">
-        <div class="step-num"><span class="label-step">STEP</span><span class="num">3</span></div>
-        <h3>ご提案・おつなぎ</h3>
-        <p>ご状況に合わせて、必要な制度・サービス・専門機関をご案内します。介護保険の申請サポートも行います。</p>
-      </div>
-      <div class="flow-step">
-        <div class="step-num"><span class="label-step">STEP</span><span class="num">4</span></div>
-        <h3>継続的な見守り</h3>
-        <p>ご利用開始後も、地域の専門職と連携しながら、暮らしの変化に合わせて継続的にサポートします。</p>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -1106,38 +994,6 @@
   </div>
 </section>
 
-<!-- FAQ -->
-<section class="faq">
-  <div class="section-inner">
-    <div class="section-head">
-      <h2>よくあるご質問</h2>
-      <p>はじめての方からよくいただくご質問にお答えします。</p>
-    </div>
-    <div class="faq-list">
-      <div class="faq-item">
-        <div class="faq-q"><span class="mark">Q</span><span>相談だけでも大丈夫ですか？費用はかかりますか？</span></div>
-        <div class="faq-a"><span class="mark">A</span><span>はい、相談はすべて無料です。さいたま市から委託を受けた公的な窓口ですので、ご利用者様のご負担はありません。お気軽にお声がけください。</span></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q"><span class="mark">Q</span><span>本人ではなく、家族や近所の人からの相談でもよいですか？</span></div>
-        <div class="faq-a"><span class="mark">A</span><span>もちろんです。ご家族・ご親族・ご近所の方・地域の民生委員の方など、どなたからのご相談・ご連絡も歓迎しています。「あの人が気がかりで…」という小さな声がけが、見守りの第一歩になります。</span></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q"><span class="mark">Q</span><span>居宅介護支援事業所（ケアマネジャー）と何が違うのですか？</span></div>
-        <div class="faq-a"><span class="mark">A</span><span>居宅介護支援事業所は要介護1〜5の方のケアプランを作成します。地域包括支援センターは、要支援1・2の方や、介護認定を受ける前の段階のご相談、地域全体の支援体制づくりまでを幅広く担当します。</span></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q"><span class="mark">Q</span><span>担当のセンターはどう決まりますか？</span></div>
-        <div class="faq-a"><span class="mark">A</span><span>お住まいの地域（中学校区などの担当エリア）によって、担当のセンターがさいたま市ごとに決められています。当センターの担当エリア外の方は、最寄りのセンターをご案内いたしますのでお気軽にお問い合わせください。</span></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q"><span class="mark">Q</span><span>個人情報や相談内容は守られますか？</span></div>
-        <div class="faq-a"><span class="mark">A</span><span>ご相談の内容は、関係法令に基づき厳重に守秘いたします。ご本人の同意なしに外部へお伝えすることはありません。</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- お問い合わせ -->
 <section class="contact" id="contact">
   <div class="section-inner">
@@ -1187,9 +1043,9 @@
         <h4>サイト内リンク</h4>
         <ul>
           <li><a href="#about">センターとは</a></li>
-          <li><a href="#services">4つの業務</a></li>
-          <li><a href="#target">こんな方へ</a></li>
-          <li><a href="#flow">ご利用の流れ</a></li>
+          <li><a href="#services">役割</a></li>
+          <li><a href="#news">新着情報</a></li>
+          <li><a href="#area">担当エリア</a></li>
           <li><a href="#offices">施設情報</a></li>
           <li><a href="#contact">お問い合わせ</a></li>
         </ul>
